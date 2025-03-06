@@ -1,5 +1,17 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "projects": {
+    "app1": {
+      "root": "apps/app1",
+      "sourceRoot": "apps/app1/src",
+      "projectType": "application"
+    },
+    "app2": {
+      "root": "apps/app2",
+      "sourceRoot": "apps/app2/src",
+      "projectType": "application"
+    }
+  },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
@@ -49,6 +61,10 @@
       "linter": "eslint",
       "style": "scss",
       "unitTestRunner": "jest"
+    },
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "none"
     }
   }
 }

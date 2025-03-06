@@ -1,28 +1,28 @@
 {
-  "name": "workspace",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "app1",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/workspace/src",
+  "sourceRoot": "app1/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/workspace",
-        "index": "apps/workspace/src/index.html",
-        "main": "apps/workspace/src/main.ts",
+        "outputPath": "dist/apps/app1",
+        "index": "apps/app1/src/index.html",
+        "main": "apps/app1/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/workspace/tsconfig.app.json",
+        "tsConfig": "apps/app1/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/workspace/public"
+            "input": "app1/public"
           }
         ],
-        "styles": ["apps/workspace/src/styles.scss"],
+        "styles": ["apps/app1/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -56,10 +56,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "workspace:build:production"
+          "buildTarget": "app1:build:production"
         },
         "development": {
-          "buildTarget": "workspace:build:development"
+          "buildTarget": "app1:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -67,7 +67,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "workspace:build"
+        "buildTarget": "app1:build"
       }
     },
     "lint": {
@@ -77,13 +77,13 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/workspace/jest.config.ts"
+        "jestConfig": "app1/jest.config.ts"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "workspace:build",
+        "buildTarget": "app1:build",
         "spa": true
       }
     }

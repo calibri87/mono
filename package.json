@@ -2,7 +2,9 @@
   "name": "@mono-repo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "app1:build": "nx build app1 --configuration=production"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~19.1.0",
